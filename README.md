@@ -1,4 +1,4 @@
-# Ops Insight API
+# AtlasOps API
 
 API backend para resolver a dor de acompanhamento operacional com historico, dashboards e rastreio de evolucao.
 
@@ -10,3 +10,4 @@ API backend para resolver a dor de acompanhamento operacional com historico, das
 
 ## LinkedIn
 Projeto para demonstrar observabilidade de negocio e pensamento de produto aplicado a backend.
+
