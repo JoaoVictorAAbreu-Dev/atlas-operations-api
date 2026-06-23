@@ -33,3 +33,11 @@ src/main/java/com/jv/opsinsight
 ## LinkedIn
 Projeto para demonstrar observabilidade de negocio e pensamento de produto aplicado a backend.
 
+## Ambiente
+Use `.env.example` como base para as variaveis de PostgreSQL.
+
+## Execucao local
+1. subir PostgreSQL com `docker compose up -d`
+2. carregar as variaveis de ambiente
+3. iniciar a aplicacao com Maven Wrapper
+
