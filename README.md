@@ -1,43 +1,73 @@
 # AtlasOps API
 
-API backend para resolver a dor de acompanhamento operacional com historico, dashboards e rastreio de evolucao.
+API backend para acompanhar operacao com eventos, saude operacional e historico para dashboards.
 
-## Proposta
-- Visao consolidada de operacao
-- Historico de eventos e status
-- Base para indicadores e auditoria
-- Foco em times que precisam enxergar fluxo e gargalos
-- Registro de eventos operacionais
-- Snapshot de saude operacional
+## Problema que resolve
+- centraliza eventos operacionais
+- acompanha saude do fluxo
+- evidencia risco e criticidade
+- cria base para auditoria e observabilidade de negocio
 
-## Estrutura
+## Stack
+- Java 21
+- Spring Boot
+- Spring Security com JWT
+- Spring Data JPA
+- PostgreSQL
+- H2 para testes
+
+## Funcionalidades
+- login com usuario demo
+- cadastro e consulta de eventos
+- resumo da saude operacional
+- seguranca com JWT
+
+## Credenciais de demo
+- email: `demo@atlasops.dev`
+- senha: `atlas123`
+
+## Variaveis de ambiente
+- `DATABASE_URL`
+- `DATABASE_USERNAME`
+- `DATABASE_PASSWORD`
+- `JWT_SECRET`
+- `JWT_EXPIRATION_MINUTES`
+
+## Execucao local
+1. subir PostgreSQL com `docker compose up -d`
+2. configurar as variaveis de ambiente
+3. executar `mvn spring-boot:run`
+
+## Testes
+```bash
+mvn test
+```
+
+## Estrutura principal
 ```text
 src/main/java/com/jv/opsinsight
+  auth/
   config/
   dashboard/
   exception/
   ops/
+  security/
+  user/
 ```
 
 ## Endpoints
 - `GET /api/health`
+- `POST /api/auth/login`
 - `GET /api/events`
 - `POST /api/events`
 - `GET /api/dashboard`
 
-## Regras
-- eventos críticos reduzem a saude operacional
-- eventos acionaveis indicam necessidade de resposta
-- o dashboard resume volume, criticidade e score
+## Observacoes de arquitetura
+- controllers sem regra de negocio
+- validacao com Bean Validation
+- tratamento centralizado de erros
+- usuarios demo persistidos em banco
+- rotas protegidas por JWT
 
-## LinkedIn
-Projeto para demonstrar observabilidade de negocio e pensamento de produto aplicado a backend.
-
-## Ambiente
-Use `.env.example` como base para as variaveis de PostgreSQL.
-
-## Execucao local
-1. subir PostgreSQL com `docker compose up -d`
-2. carregar as variaveis de ambiente
-3. iniciar a aplicacao com Maven Wrapper
-
+## Valor para LinkedIn
+Projeto forte para mostrar backend com foco em operacao, rastreabilidade, autenticacao e consistencia de dados.
