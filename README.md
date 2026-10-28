@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/portfolio-banner.svg" alt="Banner de apresentação do projeto AtlasOps API" width="100%"/>
+</p>
+
 # AtlasOps API
 
 API backend para acompanhar operacao com eventos, saude operacional e historico.
